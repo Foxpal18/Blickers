@@ -52,7 +52,7 @@ public class ParticleSimulation : Form
             float mass = (float)random.Next(2,14) * 10 + 1;
             float radius = (float)Math.Sqrt(mass);
             PointF position = new PointF(random.Next(Width), random.Next(Height));
-            PointF velocity = new PointF((float)random.NextDouble() * 6 - 3, (float)random.NextDouble() * 6 - 3);
+            PointF velocity = new PointF((float)random.NextDouble() * 4 - 2, (float)random.NextDouble() * 4 - 2);
 
             particles.Add(new Particle(mass, radius, position, velocity));
         }
