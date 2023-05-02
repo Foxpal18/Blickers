@@ -22,3 +22,14 @@ C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\obj\Debug\Parti
 C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.pdb
 C:\Users\jenis\Desktop\PHYS370_Project\Blickers\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.exe
 C:\Users\jenis\Desktop\PHYS370_Project\Blickers\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.pdb
+C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\bin\Debug\NetTopologySuite.dll
+C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\bin\Debug\System.Buffers.dll
+C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\bin\Debug\System.Memory.dll
+C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\bin\Debug\NetTopologySuite.xml
+C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\bin\Debug\System.Buffers.xml
+C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\bin\Debug\System.Memory.xml
+C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Foxpa\Source\Repos\Blickers\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.csproj.CopyComplete
