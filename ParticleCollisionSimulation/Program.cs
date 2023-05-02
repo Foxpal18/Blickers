@@ -16,7 +16,7 @@ namespace ParticleCollisionSimulation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new blickersMain());
+            Application.Run(new settingsForm());
         }
     }
 }

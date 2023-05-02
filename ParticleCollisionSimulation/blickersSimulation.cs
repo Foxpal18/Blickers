@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ParticleCollisionSimulation;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -9,6 +10,7 @@ public class Particle
     public float radius;
     public PointF position;
     public PointF velocity;
+    public float gravity;
 
     public Particle(float mass, float radius, PointF position, PointF velocity)
     {
@@ -21,9 +23,9 @@ public class Particle
 
 public class ParticleSimulation : Form
 {
-    private const int Width = 800;
-    private const int Height = 600;
-    private const int ParticleCount = 100;
+    private const int Width = 1600;
+    private const int Height = 1200;
+    private const int ParticleCount = 200;
     private const float TimeStep = 0.01f;
     private const float CollisionThreshold = 0.95f;
     private const float PotentialStrength = 1.0f;
@@ -154,6 +156,9 @@ public class ParticleSimulation : Form
 
     public static void Main()
     {
+        settingsForm sf = new settingsForm();
+        sf.Show();
+
         Application.Run(new ParticleSimulation());
     }
 }

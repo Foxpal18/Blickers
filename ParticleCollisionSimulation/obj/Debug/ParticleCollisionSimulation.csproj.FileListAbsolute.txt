@@ -1,6 +1,5 @@
 C:\Users\Foxpa\source\repos\ParticleCollisionSimulation\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.csproj.AssemblyReference.cache
 C:\Users\Foxpa\source\repos\ParticleCollisionSimulation\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.csproj.SuggestedBindingRedirects.cache
-C:\Users\Foxpa\source\repos\ParticleCollisionSimulation\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.blickersMain.resources
 C:\Users\Foxpa\source\repos\ParticleCollisionSimulation\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.Properties.Resources.resources
 C:\Users\Foxpa\source\repos\ParticleCollisionSimulation\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.csproj.GenerateResource.cache
 C:\Users\Foxpa\source\repos\ParticleCollisionSimulation\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.csproj.CoreCompileInputs.cache
@@ -9,3 +8,4 @@ C:\Users\Foxpa\source\repos\ParticleCollisionSimulation\ParticleCollisionSimulat
 C:\Users\Foxpa\source\repos\ParticleCollisionSimulation\ParticleCollisionSimulation\bin\Debug\ParticleCollisionSimulation.pdb
 C:\Users\Foxpa\source\repos\ParticleCollisionSimulation\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.exe
 C:\Users\Foxpa\source\repos\ParticleCollisionSimulation\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.pdb
+C:\Users\Foxpa\source\repos\ParticleCollisionSimulation\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.settingsForm.resources
