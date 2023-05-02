@@ -52,7 +52,7 @@ public class ParticleSimulation : Form
             float mass = (float)random.Next(2,14) * 10 + 1;
             float radius = (float)Math.Sqrt(mass);
             PointF position = new PointF(random.Next(Width), random.Next(Height));
-            PointF velocity = new PointF((float)random.NextDouble() * 4 - 2, (float)random.NextDouble() * 4 - 2);
+            PointF velocity = new PointF((float)random.NextDouble() * 2 - 1, (float)random.NextDouble() * 2 - 1);
 
             particles.Add(new Particle(mass, radius, position, velocity));
         }
@@ -108,16 +108,16 @@ public class ParticleSimulation : Form
 
                 // Calculate potential energy
                 float mass = Math.Min(particle1.mass, particle2.mass);
-                float potentialEnergy = (float)(PotentialStrength * Math.Pow(mass / distance, 12) - 2 * PotentialStrength * Math.Pow(mass / distance, 6));
+                float potentialEnergy = (float)(PotentialStrength * Math.Pow(mass / distance, 12) - PotentialStrength * Math.Pow(mass / distance, 6));
 
                 // Calculate force
                 float force = (float)(-12 * PotentialStrength * Math.Pow(mass / distance, 13) + 6 * PotentialStrength * Math.Pow(mass / distance, 7));
 
                 // Apply force to particles
-                particle1.velocity.X += force * directionX / particle1.mass * TimeStep % 2;
-                particle1.velocity.Y += force * directionY / particle1.mass * TimeStep % 2;
-                particle2.velocity.X -= force * directionX / particle2.mass * TimeStep % 2;
-                particle2.velocity.Y -= force * directionY / particle2.mass * TimeStep % 2;
+                particle1.velocity.X += ((float)force * directionX / particle1.mass * TimeStep) % 2;
+                particle1.velocity.Y += ((float)force * directionY / particle1.mass * TimeStep) % 2;
+                particle2.velocity.X -= ((float)force * directionX / particle2.mass * TimeStep) % 2;
+                particle2.velocity.Y -= ((float)force * directionY / particle2.mass * TimeStep) % 2;
 
                 // Handle collisions
                 if (distance < particle1.radius + particle2.radius)
