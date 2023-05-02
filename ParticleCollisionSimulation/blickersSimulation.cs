@@ -163,12 +163,12 @@ public class ParticleSimulation : Form
                     float vy2 = particle2.velocity.Y;
                     float dotProduct = (vx2 * vx1) + (vy2 * vy1);
                     float massSum = particle1.mass + particle2.mass;
-                    float impulse = (1 + CollisionThreshold) * (dotProduct / massSum);
+                    float impulse = (force * TimeStep);
 
-                    particle1.velocity.X += impulse * directionX;
-                    particle1.velocity.Y += impulse * directionY;
-                    particle2.velocity.X -= impulse * directionX;
-                    particle2.velocity.Y -= impulse * directionY;
+                    particle1.velocity.X += (impulse / particle1.mass) - vx1 * directionX;
+                    particle1.velocity.Y += (impulse / particle1.mass) - vy1 * directionY;
+                    particle2.velocity.X -= (impulse / particle2.mass) - vx2 * directionX;
+                    particle2.velocity.Y -= (impulse / particle2.mass) - vy2 * directionY;
                 }
             }
         }
