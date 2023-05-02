@@ -1,4 +1,7 @@
-﻿using ParticleCollisionSimulation;
+﻿// Brief comments: Add constant forcing field where vector + magnitude 
+
+
+using ParticleCollisionSimulation;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,7 +13,6 @@ public class Particle
     public float radius;
     public PointF position;
     public PointF velocity;
-    public float gravity;
 
     public Particle(float mass, float radius, PointF position, PointF velocity)
     {
