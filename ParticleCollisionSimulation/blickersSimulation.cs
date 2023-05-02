@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 public class Particle
 {
@@ -32,11 +33,28 @@ public class ParticleSimulation : Form
     private const float TimeStep = 0.01f;
     private const float CollisionThreshold = 0.95f;
     private const float PotentialStrength = 1.0f;
+//    public double BondingK { get; set; }
+//    public double BondingRO {  get; set; }
 
     private List<Particle> particles;
     private Random random;
     private Bitmap bitmap;
     private Graphics graphics;
+
+    
+//    public void updateForces()
+//    {
+//        for (int i = 0; i < particles.Count; i++)
+//        {
+//            Particle p1 = particles[i];
+//            for (int j = i + 1; j < particles.Count; j++)
+//            {
+//                Particle p2 = particles[j];
+//                Vector2D r = p2.position;
+//                double dist = r.Magnitude;
+//            }
+//        }
+//    }
 
     public ParticleSimulation()
     {
@@ -49,10 +67,10 @@ public class ParticleSimulation : Form
 
         for (int i = 0; i < ParticleCount; i++)
         {
-            float mass = (float)random.Next(2,14) * 10 + 1;
-            float radius = (float)Math.Sqrt(mass);
+            float mass = (float)random.Next(10,14);
+            float radius = ((float)mass);
             PointF position = new PointF(random.Next(Width), random.Next(Height));
-            PointF velocity = new PointF((float)random.NextDouble() * 4 - 2, (float)random.NextDouble() * 4 - 2);
+            PointF velocity = new PointF((float)random.Next(0,12), (float)random.Next(0,12));
 
             particles.Add(new Particle(mass, radius, position, velocity));
         }
@@ -87,7 +105,14 @@ public class ParticleSimulation : Form
             if (particle.position.Y >= Height) particle.position.Y -= Height;
 
             // Render particle
-            graphics.FillEllipse(Brushes.White, particle.position.X - particle.radius, particle.position.Y - particle.radius, 2 * particle.radius, 2 * particle.radius);
+            try
+            {
+                graphics.FillEllipse(Brushes.White, particle.position.X - particle.radius, particle.position.Y - particle.radius, 2 * particle.radius, 2 * particle.radius);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+            }
         }
 
         // Update particle velocities
@@ -108,16 +133,16 @@ public class ParticleSimulation : Form
 
                 // Calculate potential energy
                 float mass = Math.Min(particle1.mass, particle2.mass);
-                float potentialEnergy = (float)(PotentialStrength * Math.Pow(mass / distance, 12) - 2 * PotentialStrength * Math.Pow(mass / distance, 6));
+                float potentialEnergy = (float)(PotentialStrength * Math.Pow(mass / distance, 12) - PotentialStrength * Math.Pow(mass / distance, 6));
 
                 // Calculate force
-                float force = (float)(-12 * PotentialStrength * Math.Pow(mass / distance, 13) + 6 * PotentialStrength * Math.Pow(mass / distance, 7));
+                float force = (float)(12 * PotentialStrength * Math.Pow(mass / distance, 13) - 6 * PotentialStrength * Math.Pow(mass / distance, 7));
 
                 // Apply force to particles
-                particle1.velocity.X += force * directionX / particle1.mass * TimeStep % 2;
-                particle1.velocity.Y += force * directionY / particle1.mass * TimeStep % 2;
-                particle2.velocity.X -= force * directionX / particle2.mass * TimeStep % 2;
-                particle2.velocity.Y -= force * directionY / particle2.mass * TimeStep % 2;
+                particle1.velocity.X += (force * directionX / particle1.mass * TimeStep) / 2;
+                particle1.velocity.Y += (force * directionY / particle1.mass * TimeStep) / 2;
+                particle2.velocity.X -= (force * directionX / particle2.mass * TimeStep) / 2;
+                particle2.velocity.Y -= (force * directionY / particle2.mass * TimeStep) / 2;
 
                 // Handle collisions
                 if (distance < particle1.radius + particle2.radius)
@@ -136,14 +161,14 @@ public class ParticleSimulation : Form
                     float vy1 = particle1.velocity.Y;
                     float vx2 = particle2.velocity.X;
                     float vy2 = particle2.velocity.Y;
-                    float dotProduct = (vx2 - vx1) * directionX + (vy2 - vy1) * directionY;
+                    float dotProduct = (vx2 * vx1) + (vy2 * vy1);
                     float massSum = particle1.mass + particle2.mass;
-                    float impulse = (1 + CollisionThreshold) * dotProduct / massSum;
+                    float impulse = (force * TimeStep);
 
-                    particle1.velocity.X += impulse * directionX;
-                    particle1.velocity.Y += impulse * directionY;
-                    particle2.velocity.X -= impulse * directionX;
-                    particle2.velocity.Y -= impulse * directionY;
+                    particle1.velocity.X += (impulse / particle1.mass) - vx1 * directionX;
+                    particle1.velocity.Y += (impulse / particle1.mass) - vy1 * directionY;
+                    particle2.velocity.X -= (impulse / particle2.mass) - vx2 * directionX;
+                    particle2.velocity.Y -= (impulse / particle2.mass) - vy2 * directionY; 
                 }
             }
         }
