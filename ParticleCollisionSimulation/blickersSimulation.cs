@@ -67,7 +67,7 @@ public class ParticleSimulation : Form
 
         for (int i = 0; i < ParticleCount; i++)
         {
-            float mass = (float)random.Next(2,14);
+            float mass = (float)random.Next(10,14);
             float radius = ((float)mass);
             PointF position = new PointF(random.Next(Width), random.Next(Height));
             PointF velocity = new PointF((float)random.Next(0,12), (float)random.Next(0,12));
@@ -168,7 +168,7 @@ public class ParticleSimulation : Form
                     particle1.velocity.X += (impulse / particle1.mass) - vx1 * directionX;
                     particle1.velocity.Y += (impulse / particle1.mass) - vy1 * directionY;
                     particle2.velocity.X -= (impulse / particle2.mass) - vx2 * directionX;
-                    particle2.velocity.Y -= (impulse / particle2.mass) - vy2 * directionY;
+                    particle2.velocity.Y -= (impulse / particle2.mass) - vy2 * directionY; 
                 }
             }
         }
