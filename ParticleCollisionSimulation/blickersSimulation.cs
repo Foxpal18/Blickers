@@ -1,4 +1,5 @@
-﻿// Brief comments: Add constant forcing field where vector + magnitude 
+﻿// Add constant forcing field where vector + magnitude is decided by a text box with entered values. Additionally, need to add other forcing options like standard force fields. 
+// Finally, use periodic boundary conditions (make them interchangable) to simulate different RP^2 connective edges (see: https://en.wikipedia.org/wiki/Real_projective_plane)
 
 
 using ParticleCollisionSimulation;
@@ -48,7 +49,7 @@ public class ParticleSimulation : Form
 
         for (int i = 0; i < ParticleCount; i++)
         {
-            float mass = (float)random.Next(6,10) * 10 + 1;
+            float mass = (float)random.Next(2,14) * 10 + 1;
             float radius = (float)Math.Sqrt(mass);
             PointF position = new PointF(random.Next(Width), random.Next(Height));
             PointF velocity = new PointF((float)random.NextDouble() * 6 - 3, (float)random.NextDouble() * 6 - 3);
