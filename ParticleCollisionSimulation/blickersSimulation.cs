@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Numerics;
 
 public class Particle
 {
@@ -161,14 +162,15 @@ public class ParticleSimulation : Form
                     float vy1 = particle1.velocity.Y;
                     float vx2 = particle2.velocity.X;
                     float vy2 = particle2.velocity.Y;
-                    float dotProduct = (vx2 * vx1) + (vy2 * vy1);
+                    float xdiff = directionX - directionY;
+                    float dotProduct = ((vx1 - vx2) * xdiff) + ((vy1 - vy2) * xdiff);
+                    float xnorm = 2 * xdiff * xdiff;
                     float massSum = particle1.mass + particle2.mass;
-                    float impulse = (force * TimeStep);
 
-                    particle1.velocity.X += (impulse / particle1.mass) - vx1 * directionX;
-                    particle1.velocity.Y += (impulse / particle1.mass) - vy1 * directionY;
-                    particle2.velocity.X -= (impulse / particle2.mass) - vx2 * directionX;
-                    particle2.velocity.Y -= (impulse / particle2.mass) - vy2 * directionY; 
+                    particle1.velocity.X -= (2 * particle2.mass / massSum) * (dotProduct / xnorm) * xdiff; // These are almost right, need to get non-direct collisions fixed and vectors properly implamented
+                    particle1.velocity.Y -= (2 * particle2.mass / massSum) * (dotProduct / xnorm) * xdiff;
+                    particle2.velocity.X -= (2 * particle1.mass / massSum) * (dotProduct / xnorm) * (-1) * xdiff;
+                    particle2.velocity.Y -= (2 * particle1.mass / massSum) * (dotProduct / xnorm) * (-1) * xdiff; 
                 }
             }
         }
