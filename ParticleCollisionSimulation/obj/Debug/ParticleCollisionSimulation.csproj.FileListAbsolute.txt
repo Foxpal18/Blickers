@@ -53,3 +53,6 @@ C:\Users\jenis\Desktop\PHYS370_Project\Blickers\ParticleCollisionSimulation\obj\
 C:\Users\jenis\Desktop\PHYS370_Project\Blickers\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.csproj.GenerateResource.cache
 C:\Users\jenis\Desktop\PHYS370_Project\Blickers\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.csproj.CoreCompileInputs.cache
 C:\Users\jenis\Desktop\PHYS370_Project\Blickers\ParticleCollisionSimulation\obj\Debug\ParticleCollisionSimulation.csproj.CopyComplete
+C:\Users\Foxpa\source\repos\Blickers\ParticleCollisionSimulation\bin\Debug\OpenTK.dll
+C:\Users\Foxpa\source\repos\Blickers\ParticleCollisionSimulation\bin\Debug\OpenTK.pdb
+C:\Users\Foxpa\source\repos\Blickers\ParticleCollisionSimulation\bin\Debug\OpenTK.xml
