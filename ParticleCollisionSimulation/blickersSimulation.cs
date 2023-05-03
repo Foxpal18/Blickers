@@ -34,28 +34,11 @@ public class ParticleSimulation : Form
     private const float TimeStep = 0.01f;
     private const float CollisionThreshold = 0.95f;
     private const float PotentialStrength = 1.0f;
-//    public double BondingK { get; set; }
-//    public double BondingRO {  get; set; }
 
     private List<Particle> particles;
     private Random random;
     private Bitmap bitmap;
     private Graphics graphics;
-
-    
-//    public void updateForces()
-//    {
-//        for (int i = 0; i < particles.Count; i++)
-//        {
-//            Particle p1 = particles[i];
-//            for (int j = i + 1; j < particles.Count; j++)
-//            {
-//                Particle p2 = particles[j];
-//                Vector2D r = p2.position;
-//                double dist = r.Magnitude;
-//            }
-//        }
-//    }
 
     public ParticleSimulation()
     {
