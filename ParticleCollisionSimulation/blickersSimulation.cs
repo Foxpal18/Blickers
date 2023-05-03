@@ -167,7 +167,7 @@ public class ParticleSimulation : Form
                     float xnorm = 2 * xdiff * xdiff;
                     float massSum = particle1.mass + particle2.mass;
 
-                    particle1.velocity.X -= (2 * particle2.mass / massSum) * (dotProduct / xnorm) * xdiff; // These are almost right, need to get non-direct collisions fixed and vectors properly implamented
+                    particle1.velocity.X -= (2 * particle2.mass / massSum) * (dotProduct / xnorm) * xdiff; // These are almost right, need to get non-direct collisions fixed and vectors properly implemented
                     particle1.velocity.Y -= (2 * particle2.mass / massSum) * (dotProduct / xnorm) * xdiff;
                     particle2.velocity.X -= (2 * particle1.mass / massSum) * (dotProduct / xnorm) * (-1) * xdiff;
                     particle2.velocity.Y -= (2 * particle1.mass / massSum) * (dotProduct / xnorm) * (-1) * xdiff; 
