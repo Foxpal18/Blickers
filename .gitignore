@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/ParticleCollisionSimulation/v17/.suo
+/ParticleCollisionSimulation/bin/Debug/ParticleCollisionSimulation.exe
+/ParticleCollisionSimulation/bin/Debug/ParticleCollisionSimulation.pdb
+/ParticleCollisionSimulation/obj/Debug/ParticleCollisionSimulation.exe
+/ParticleCollisionSimulation/obj/Debug/ParticleCollisionSimulation.pdb
