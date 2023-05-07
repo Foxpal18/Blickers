@@ -56,3 +56,6 @@ C:\Users\jenis\Desktop\PHYS370_Project\Blickers\ParticleCollisionSimulation\obj\
 C:\Users\Foxpa\source\repos\Blickers\ParticleCollisionSimulation\bin\Debug\OpenTK.dll
 C:\Users\Foxpa\source\repos\Blickers\ParticleCollisionSimulation\bin\Debug\OpenTK.pdb
 C:\Users\Foxpa\source\repos\Blickers\ParticleCollisionSimulation\bin\Debug\OpenTK.xml
+C:\Users\jenis\Desktop\PHYS370_Project\Blickers\ParticleCollisionSimulation\bin\Debug\OpenTK.dll
+C:\Users\jenis\Desktop\PHYS370_Project\Blickers\ParticleCollisionSimulation\bin\Debug\OpenTK.pdb
+C:\Users\jenis\Desktop\PHYS370_Project\Blickers\ParticleCollisionSimulation\bin\Debug\OpenTK.xml
